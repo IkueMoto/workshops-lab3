@@ -1,0 +1,14 @@
+---
+
+# This playbook is made for demonstation of rapidly deploying HA pair of LTM VEs in the lab. It requires configured
+# Management Port and an ability to reach an internal licensing server.
+
+- name: Start Lab Setup
+  hosts: f5-lab1
+  connection: local
+
+  roles:
+  - bigip_license
+  - bigip_network
+  - bigip_ha
+  - bigip_basic_vs
